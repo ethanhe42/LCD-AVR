@@ -1,0 +1,496 @@
+
+zz.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000000b2  00800100  000002aa  0000031e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002aa  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .debug_aranges 00000020  00000000  00000000  000003d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 000000a5  00000000  00000000  000003f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000441  00000000  00000000  00000495  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000017b  00000000  00000000  000008d6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   0000036a  00000000  00000000  00000a51  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000080  00000000  00000000  00000dbc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    0000012c  00000000  00000000  00000e3c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    0000014c  00000000  00000000  00000f68  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000048  00000000  00000000  000010b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  18:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  1c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  20:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea ea       	ldi	r30, 0xAA	; 170
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a2 3b       	cpi	r26, 0xB2	; 178
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 2d 01 	call	0x25a	; 0x25a <main>
+  b6:	0c 94 53 01 	jmp	0x2a6	; 0x2a6 <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <LCD12864PortInit>:
+}
+
+void LCD12864PortInit()
+{      
+	//LCD数据端口设置
+	PORTB = 0x00;         //
+  be:	18 ba       	out	0x18, r1	; 24
+	DDRB = 0xFF;           //配置端口PB全部为输出口
+  c0:	8f ef       	ldi	r24, 0xFF	; 255
+  c2:	87 bb       	out	0x17, r24	; 23
+	 
+	PORTD = 0x00;
+  c4:	12 ba       	out	0x12, r1	; 18
+	DDRD |= (1 << RS) | (1 << RW) | (1 << E);
+  c6:	81 b3       	in	r24, 0x11	; 17
+  c8:	80 6e       	ori	r24, 0xE0	; 224
+  ca:	81 bb       	out	0x11, r24	; 17
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  cc:	80 e3       	ldi	r24, 0x30	; 48
+  ce:	95 e7       	ldi	r25, 0x75	; 117
+  d0:	01 97       	sbiw	r24, 0x01	; 1
+  d2:	f1 f7       	brne	.-4      	; 0xd0 <LCD12864PortInit+0x12>
+	_delay_ms(15);
+}
+  d4:	08 95       	ret
+
+000000d6 <LCD12864BusyCheck>:
+void LCD12864BusyCheck(void)
+{
+    unsigned int uiTemp;
+	uiTemp = 3000;
+	
+	DDRB = 0x00;             //PB口置为输入口，准备读取数据
+  d6:	17 ba       	out	0x17, r1	; 23
+	PORTD &= ~(1 << RS);      //RS=0，读命令
+  d8:	95 98       	cbi	0x12, 5	; 18
+	PORTD |= (1 << RW);    //RW=1，读指令
+  da:	96 9a       	sbi	0x12, 6	; 18
+	PORTD |= (1 << E);      //E=1，使能
+  dc:	97 9a       	sbi	0x12, 7	; 18
+  de:	88 eb       	ldi	r24, 0xB8	; 184
+  e0:	9b e0       	ldi	r25, 0x0B	; 11
+	
+	while((0x80 & PINB) && (uiTemp--));   //监测忙信号，直到忙信号为0，才能进行读写操作
+  e2:	b7 9b       	sbis	0x16, 7	; 22
+  e4:	04 c0       	rjmp	.+8      	; 0xee <LCD12864BusyCheck+0x18>
+  e6:	00 97       	sbiw	r24, 0x00	; 0
+  e8:	11 f0       	breq	.+4      	; 0xee <LCD12864BusyCheck+0x18>
+  ea:	01 97       	sbiw	r24, 0x01	; 1
+  ec:	fa cf       	rjmp	.-12     	; 0xe2 <LCD12864BusyCheck+0xc>
+	
+	PORTD &= ~(1 << E);   //E=0
+  ee:	97 98       	cbi	0x12, 7	; 18
+	DDRB = 0xFF;          //PA口置为输出口，准备向端口发送数据
+  f0:	8f ef       	ldi	r24, 0xFF	; 255
+  f2:	87 bb       	out	0x17, r24	; 23
+	
+}
+  f4:	08 95       	ret
+
+000000f6 <LCD12864WriteData>:
+    _delay_ms(5);
+	
+}
+
+void LCD12864WriteData(unsigned char ucData)
+{
+  f6:	1f 93       	push	r17
+  f8:	18 2f       	mov	r17, r24
+	LCD12864BusyCheck();
+  fa:	0e 94 6b 00 	call	0xd6	; 0xd6 <LCD12864BusyCheck>
+
+	PORTD |= (1 << RS);      //RS=1，写数据
+  fe:	95 9a       	sbi	0x12, 5	; 18
+	PORTD &= ~(1 << RW);    //RW=0，写指令
+ 100:	96 98       	cbi	0x12, 6	; 18
+	PORTD |= (1 << E);      //E=1，写操作
+ 102:	97 9a       	sbi	0x12, 7	; 18
+ 104:	80 ea       	ldi	r24, 0xA0	; 160
+ 106:	9f e0       	ldi	r25, 0x0F	; 15
+ 108:	01 97       	sbiw	r24, 0x01	; 1
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <LCD12864WriteData+0x12>
+	_delay_ms(2);  
+	PORTB = ucData;        // 数据送数据端口   
+ 10c:	18 bb       	out	0x18, r17	; 24
+	PORTD &= ~(1 << E);    //E=0，停止写操作
+ 10e:	97 98       	cbi	0x12, 7	; 18
+ 110:	80 e1       	ldi	r24, 0x10	; 16
+ 112:	97 e2       	ldi	r25, 0x27	; 39
+ 114:	01 97       	sbiw	r24, 0x01	; 1
+ 116:	f1 f7       	brne	.-4      	; 0x114 <LCD12864WriteData+0x1e>
+	_delay_ms(5);
+	
+}
+ 118:	1f 91       	pop	r17
+ 11a:	08 95       	ret
+
+0000011c <LCD12864WriteCommand>:
+//针加一，光标加一，整屏不移动
+	_delay_ms(5);
+}
+
+void LCD12864WriteCommand(unsigned char ucCommand)
+{
+ 11c:	1f 93       	push	r17
+ 11e:	18 2f       	mov	r17, r24
+	LCD12864BusyCheck();
+ 120:	0e 94 6b 00 	call	0xd6	; 0xd6 <LCD12864BusyCheck>
+	
+	PORTD &= ~(1 << RS);     //RS=0，写命令
+ 124:	95 98       	cbi	0x12, 5	; 18
+	PORTD &= ~(1 << RW);     //RW=0，写指令
+ 126:	96 98       	cbi	0x12, 6	; 18
+	PORTD |= (1 << E);       //E=1，写操作
+ 128:	97 9a       	sbi	0x12, 7	; 18
+ 12a:	80 ea       	ldi	r24, 0xA0	; 160
+ 12c:	9f e0       	ldi	r25, 0x0F	; 15
+ 12e:	01 97       	sbiw	r24, 0x01	; 1
+ 130:	f1 f7       	brne	.-4      	; 0x12e <LCD12864WriteCommand+0x12>
+	_delay_ms(2);
+	PORTB = ucCommand;         //指令送数据端口
+ 132:	18 bb       	out	0x18, r17	; 24
+	PORTD &= ~(1 << E);     //E=0，停止写操作
+ 134:	97 98       	cbi	0x12, 7	; 18
+ 136:	80 e1       	ldi	r24, 0x10	; 16
+ 138:	97 e2       	ldi	r25, 0x27	; 39
+ 13a:	01 97       	sbiw	r24, 0x01	; 1
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <LCD12864WriteCommand+0x1e>
+    _delay_ms(5);
+	
+}
+ 13e:	1f 91       	pop	r17
+ 140:	08 95       	ret
+
+00000142 <LCD12864Init>:
+	DDRD |= (1 << RS) | (1 << RW) | (1 << E);
+	_delay_ms(15);
+}
+
+void LCD12864Init()
+{
+ 142:	0f 93       	push	r16
+ 144:	1f 93       	push	r17
+	LCD12864WriteCommand(0x01);  //清屏
+ 146:	81 e0       	ldi	r24, 0x01	; 1
+ 148:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 14c:	80 e3       	ldi	r24, 0x30	; 48
+ 14e:	95 e7       	ldi	r25, 0x75	; 117
+ 150:	01 97       	sbiw	r24, 0x01	; 1
+ 152:	f1 f7       	brne	.-4      	; 0x150 <LCD12864Init+0xe>
+	_delay_ms(15);
+	LCD12864WriteCommand(0x38);  //显示模式 
+ 154:	88 e3       	ldi	r24, 0x38	; 56
+ 156:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 15a:	00 e1       	ldi	r16, 0x10	; 16
+ 15c:	17 e2       	ldi	r17, 0x27	; 39
+ 15e:	c8 01       	movw	r24, r16
+ 160:	01 97       	sbiw	r24, 0x01	; 1
+ 162:	f1 f7       	brne	.-4      	; 0x160 <LCD12864Init+0x1e>
+	_delay_ms(5);
+	LCD12864WriteCommand(0x0f);  //显示开关控制，开显示，光标显示，光
+ 164:	8f e0       	ldi	r24, 0x0F	; 15
+ 166:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+//标闪烁
+	LCD12864WriteCommand(0x0c);  //显示开关控制，开显示，光标不显示，
+ 16a:	8c e0       	ldi	r24, 0x0C	; 12
+ 16c:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 170:	c8 01       	movw	r24, r16
+ 172:	01 97       	sbiw	r24, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LCD12864Init+0x30>
+//光标不闪烁
+	_delay_ms(5);
+	LCD12864WriteCommand(0x06);  //光标设置，读或写一个字符后，地址指
+ 176:	86 e0       	ldi	r24, 0x06	; 6
+ 178:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 17c:	c8 01       	movw	r24, r16
+ 17e:	01 97       	sbiw	r24, 0x01	; 1
+ 180:	f1 f7       	brne	.-4      	; 0x17e <LCD12864Init+0x3c>
+//针加一，光标加一，整屏不移动
+	_delay_ms(5);
+}
+ 182:	1f 91       	pop	r17
+ 184:	0f 91       	pop	r16
+ 186:	08 95       	ret
+
+00000188 <println>:
+void LCD12864WriteCommand(unsigned char ucCommand);   //LCD写指令
+void LCD12864WriteData(unsigned char ucData);  //LCD写数据
+void LCD12864BusyCheck(void);   //读写检测函数，每次对液晶操作前都要进
+//行读写检测
+
+void println(unsigned char* ucData){
+ 188:	cf 93       	push	r28
+ 18a:	df 93       	push	r29
+	int i =0;
+	for (i=0;i<3;i++){
+		lines[i]=lines[i+1];
+ 18c:	20 91 ab 01 	lds	r18, 0x01AB
+ 190:	30 91 ac 01 	lds	r19, 0x01AC
+ 194:	30 93 aa 01 	sts	0x01AA, r19
+ 198:	20 93 a9 01 	sts	0x01A9, r18
+ 19c:	20 91 ad 01 	lds	r18, 0x01AD
+ 1a0:	30 91 ae 01 	lds	r19, 0x01AE
+ 1a4:	30 93 ac 01 	sts	0x01AC, r19
+ 1a8:	20 93 ab 01 	sts	0x01AB, r18
+ 1ac:	20 91 af 01 	lds	r18, 0x01AF
+ 1b0:	30 91 b0 01 	lds	r19, 0x01B0
+ 1b4:	30 93 ae 01 	sts	0x01AE, r19
+ 1b8:	20 93 ad 01 	sts	0x01AD, r18
+	}
+	lines[3] = ucData;
+ 1bc:	90 93 b0 01 	sts	0x01B0, r25
+ 1c0:	80 93 af 01 	sts	0x01AF, r24
+		LCD12864WriteCommand(0x80+0x00);
+ 1c4:	80 e8       	ldi	r24, 0x80	; 128
+ 1c6:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 1ca:	c0 e0       	ldi	r28, 0x00	; 0
+ 1cc:	d0 e0       	ldi	r29, 0x00	; 0
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[0][i]);
+ 1ce:	e0 91 a9 01 	lds	r30, 0x01A9
+ 1d2:	f0 91 aa 01 	lds	r31, 0x01AA
+ 1d6:	ec 0f       	add	r30, r28
+ 1d8:	fd 1f       	adc	r31, r29
+ 1da:	80 81       	ld	r24, Z
+ 1dc:	0e 94 7b 00 	call	0xf6	; 0xf6 <LCD12864WriteData>
+	for (i=0;i<3;i++){
+		lines[i]=lines[i+1];
+	}
+	lines[3] = ucData;
+		LCD12864WriteCommand(0x80+0x00);
+		for(i = 0;i < 16;i++)
+ 1e0:	21 96       	adiw	r28, 0x01	; 1
+ 1e2:	c0 31       	cpi	r28, 0x10	; 16
+ 1e4:	d1 05       	cpc	r29, r1
+ 1e6:	99 f7       	brne	.-26     	; 0x1ce <println+0x46>
+		{
+			LCD12864WriteData(lines[0][i]);
+		}
+		LCD12864WriteCommand(0x90+0x00);
+ 1e8:	80 e9       	ldi	r24, 0x90	; 144
+ 1ea:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 1ee:	c0 e0       	ldi	r28, 0x00	; 0
+ 1f0:	d0 e0       	ldi	r29, 0x00	; 0
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[1][i]);
+ 1f2:	e0 91 ab 01 	lds	r30, 0x01AB
+ 1f6:	f0 91 ac 01 	lds	r31, 0x01AC
+ 1fa:	ec 0f       	add	r30, r28
+ 1fc:	fd 1f       	adc	r31, r29
+ 1fe:	80 81       	ld	r24, Z
+ 200:	0e 94 7b 00 	call	0xf6	; 0xf6 <LCD12864WriteData>
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[0][i]);
+		}
+		LCD12864WriteCommand(0x90+0x00);
+		for(i = 0;i < 16;i++)
+ 204:	21 96       	adiw	r28, 0x01	; 1
+ 206:	c0 31       	cpi	r28, 0x10	; 16
+ 208:	d1 05       	cpc	r29, r1
+ 20a:	99 f7       	brne	.-26     	; 0x1f2 <println+0x6a>
+		{
+			LCD12864WriteData(lines[1][i]);
+		}
+	LCD12864WriteCommand(0x88+0x00);
+ 20c:	88 e8       	ldi	r24, 0x88	; 136
+ 20e:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 212:	c0 e0       	ldi	r28, 0x00	; 0
+ 214:	d0 e0       	ldi	r29, 0x00	; 0
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[2][i]);
+ 216:	e0 91 ad 01 	lds	r30, 0x01AD
+ 21a:	f0 91 ae 01 	lds	r31, 0x01AE
+ 21e:	ec 0f       	add	r30, r28
+ 220:	fd 1f       	adc	r31, r29
+ 222:	80 81       	ld	r24, Z
+ 224:	0e 94 7b 00 	call	0xf6	; 0xf6 <LCD12864WriteData>
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[1][i]);
+		}
+	LCD12864WriteCommand(0x88+0x00);
+		for(i = 0;i < 16;i++)
+ 228:	21 96       	adiw	r28, 0x01	; 1
+ 22a:	c0 31       	cpi	r28, 0x10	; 16
+ 22c:	d1 05       	cpc	r29, r1
+ 22e:	99 f7       	brne	.-26     	; 0x216 <println+0x8e>
+		{
+			LCD12864WriteData(lines[2][i]);
+		}
+	LCD12864WriteCommand(0x98+0x00);
+ 230:	88 e9       	ldi	r24, 0x98	; 152
+ 232:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 236:	c0 e0       	ldi	r28, 0x00	; 0
+ 238:	d0 e0       	ldi	r29, 0x00	; 0
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[3][i]);
+ 23a:	e0 91 af 01 	lds	r30, 0x01AF
+ 23e:	f0 91 b0 01 	lds	r31, 0x01B0
+ 242:	ec 0f       	add	r30, r28
+ 244:	fd 1f       	adc	r31, r29
+ 246:	80 81       	ld	r24, Z
+ 248:	0e 94 7b 00 	call	0xf6	; 0xf6 <LCD12864WriteData>
+		for(i = 0;i < 16;i++)
+		{
+			LCD12864WriteData(lines[2][i]);
+		}
+	LCD12864WriteCommand(0x98+0x00);
+		for(i = 0;i < 16;i++)
+ 24c:	21 96       	adiw	r28, 0x01	; 1
+ 24e:	c0 31       	cpi	r28, 0x10	; 16
+ 250:	d1 05       	cpc	r29, r1
+ 252:	99 f7       	brne	.-26     	; 0x23a <println+0xb2>
+		{
+			LCD12864WriteData(lines[3][i]);
+		}
+}
+ 254:	df 91       	pop	r29
+ 256:	cf 91       	pop	r28
+ 258:	08 95       	ret
+
+0000025a <main>:
+
+int main(void)            
+{
+ 25a:	0f 93       	push	r16
+ 25c:	1f 93       	push	r17
+ 25e:	cf 93       	push	r28
+ 260:	df 93       	push	r29
+  	unsigned char i;
+	
+	LCD12864PortInit();   //端口初始化
+ 262:	0e 94 5f 00 	call	0xbe	; 0xbe <LCD12864PortInit>
+	LCD12864Init();       //LCD初始化
+ 266:	0e 94 a1 00 	call	0x142	; 0x142 <LCD12864Init>
+
+	LCD12864WriteCommand(0x80+0x00);
+ 26a:	80 e8       	ldi	r24, 0x80	; 128
+ 26c:	0e 94 8e 00 	call	0x11c	; 0x11c <LCD12864WriteCommand>
+ 270:	c0 e0       	ldi	r28, 0x00	; 0
+ 272:	d0 e0       	ldi	r29, 0x00	; 0
+ 274:	08 ec       	ldi	r16, 0xC8	; 200
+ 276:	10 e0       	ldi	r17, 0x00	; 0
+
+	int j=0;
+	while(1)
+	{	
+	println(strs[j]);
+ 278:	fe 01       	movw	r30, r28
+ 27a:	ee 0f       	add	r30, r30
+ 27c:	ff 1f       	adc	r31, r31
+ 27e:	e8 57       	subi	r30, 0x78	; 120
+ 280:	fe 4f       	sbci	r31, 0xFE	; 254
+ 282:	80 81       	ld	r24, Z
+ 284:	91 81       	ldd	r25, Z+1	; 0x01
+ 286:	0e 94 c4 00 	call	0x188	; 0x188 <println>
+		j++;
+ 28a:	21 96       	adiw	r28, 0x01	; 1
+		if (j==8) j=0;
+ 28c:	c8 30       	cpi	r28, 0x08	; 8
+ 28e:	d1 05       	cpc	r29, r1
+ 290:	11 f4       	brne	.+4      	; 0x296 <main+0x3c>
+ 292:	c0 e0       	ldi	r28, 0x00	; 0
+ 294:	d0 e0       	ldi	r29, 0x00	; 0
+ 296:	80 e1       	ldi	r24, 0x10	; 16
+ 298:	97 e2       	ldi	r25, 0x27	; 39
+ 29a:	f8 01       	movw	r30, r16
+ 29c:	31 97       	sbiw	r30, 0x01	; 1
+ 29e:	f1 f7       	brne	.-4      	; 0x29c <main+0x42>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 2a0:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 2a2:	d9 f7       	brne	.-10     	; 0x29a <main+0x40>
+ 2a4:	e9 cf       	rjmp	.-46     	; 0x278 <main+0x1e>
+
+000002a6 <_exit>:
+ 2a6:	f8 94       	cli
+
+000002a8 <__stop_program>:
+ 2a8:	ff cf       	rjmp	.-2      	; 0x2a8 <__stop_program>
